@@ -28,7 +28,6 @@ This public ledger is rebuilt from GitHub once per day. Do not edit the totals b
 |---|---|---|---:|
 | [#487](https://github.com/ktwu01/benchmark-radar/issues/487) | @bigdu332 | 2026-09-27T06:28:43+00:00 | 2 |
 | [#411](https://github.com/ktwu01/benchmark-radar/issues/411) | @a-green-hand-jack | 2026-09-26T10:16:20+00:00 | 3 |
-| [#380](https://github.com/ktwu01/benchmark-radar/issues/380) | @Jeffyaoliang | 2026-09-20T21:07:58+00:00 | 12 |
 
 ## Earned points / 得分记录
 
