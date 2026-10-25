@@ -3488,3 +3488,22 @@ def test_card_links_skip_only_what_the_rail_already_opens():
     )
     assert release == []
     assert paper == ["Paper ↗", "Code ↗"]
+
+
+def test_email_signup_form_is_hidden_until_it_has_an_endpoint():
+    """Issue #906: a signup form that posts nowhere must never be shown.
+
+    The form ships hidden with an empty action until the maintainer's newsletter
+    provider exists. Once it is shown, it must post to a real https endpoint.
+    """
+    import re
+
+    html = Path("site/index.html").read_text(encoding="utf-8")
+    match = re.search(r'<form[^>]*class="email-signup"[^>]*>', html)
+    assert match, "email signup form is missing"
+    tag = match.group(0)
+    action = re.search(r'action="([^"]*)"', tag).group(1)
+    if action:
+        assert action.startswith("https://")
+    else:
+        assert re.search(r"\bhidden\b", tag)

@@ -1198,6 +1198,30 @@
           </button>
         </span>
       </aside>
+      <!--
+        Issue #906: email signup. Hidden until the newsletter provider is set up.
+        To turn it on: set action to the provider's form endpoint, set the input's
+        name to the field the provider expects (often "email"), and remove
+        `hidden`. A form without an endpoint stays hidden, so no reader types an
+        address that goes nowhere (guarded by a test in tests/test_site.py).
+      -->
+      <form class="email-signup" method="post" action="" target="_blank" hidden>
+        <label class="email-signup-label" for="email-signup-input" data-i18n="Get new benchmarks by email">Get new benchmarks by email</label>
+        <span class="email-signup-row">
+          <input
+            id="email-signup-input"
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            placeholder="you@example.com"
+            aria-label="Email address"
+            data-i18n-aria="Email address"
+          >
+          <button type="submit" class="secondary-link" data-i18n="Subscribe">Subscribe</button>
+        </span>
+        <small class="email-signup-note" data-i18n="Your address goes only to our newsletter provider. No spam; unsubscribe anytime.">Your address goes only to our newsletter provider. No spam; unsubscribe anytime.</small>
+      </form>
       <details class="privacy-note">
         <summary data-i18n="Privacy notice">Privacy notice</summary>
         <p>

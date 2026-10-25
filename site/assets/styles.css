@@ -7147,3 +7147,40 @@ dialog {
 .radar-links {
   margin-top: 0.4rem;
 }
+
+/* Issue #906: footer email signup (hidden until a provider endpoint is set). */
+.email-signup {
+  display: grid;
+  gap: 0.35rem;
+  max-width: 32rem;
+  margin: 0 0 1rem;
+}
+
+.email-signup[hidden] {
+  display: none;
+}
+
+.email-signup-label {
+  font-weight: 600;
+}
+
+.email-signup-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.email-signup-row input {
+  flex: 1 1 14rem;
+  min-width: 0;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+}
+
+.email-signup-note {
+  color: var(--muted);
+}
